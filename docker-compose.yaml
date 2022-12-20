@@ -1,0 +1,44 @@
+version: '3'
+services:
+  api:
+    container_name: api
+    restart: unless-stopped
+    image: api:1.0.0
+    build:
+      context: .
+      target: development
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - ${SERVER_PORT:-3000}:${SERVER_PORT:-3000}
+      - 9229:9229
+    command: yarn start:debug
+    env_file:
+      - .env
+    networks:
+      - api-network
+    depends_on:
+      - mysql
+  mysql:
+    image: mysql/mysql-server:8.0
+    ports:
+        - '${FORWARD_DB_PORT:-3306}:3306'
+    environment:
+        MYSQL_ROOT_PASSWORD: '${MYSQL_ROOT_PASSWORD}'
+        MYSQL_ROOT_HOST: "%"
+        MYSQL_DATABASE: '${MYSQL_DATABASE}'
+        MYSQL_USER: '${MYSQL_USER}'
+        MYSQL_PASSWORD: '${MYSQL_PASSWORD}'
+        MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    volumes:
+        - './docker/mysql/data:/var/lib/mysql'
+    healthcheck:
+        test: ["CMD", "mysqladmin", "ping", "-p${MYSQL_ROOT_PASSWORD}"]
+        retries: 3
+        timeout: 5s
+    networks:
+      - api-network
+networks:
+  api-network:
+    driver: bridge

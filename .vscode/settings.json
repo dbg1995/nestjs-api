@@ -1,0 +1,10 @@
+{
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.fixAll.eslint": true
+  },
+  "eslint.options": {
+    "resolvePluginsRelativeTo":"./node_modules/"
+},
+}

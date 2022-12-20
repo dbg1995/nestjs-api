@@ -1,0 +1,11 @@
+{
+  "page": "The current page",
+  "count": "The item count",
+  "data": "The data",
+  "id": "The id",
+  "status": "The status",
+  "creatorId": "The creator id",
+  "name": "The name",
+  "avatar": "The avatar",
+  "user": "The user"
+}

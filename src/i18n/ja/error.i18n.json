@@ -1,0 +1,39 @@
+{
+  "unauthorized": {
+    "title": "UNAUTHORIZED",
+    "message": "An authentication error has occurred."
+  },
+  "forbidden": {
+    "title": "FORBIDDEN",
+    "message": "Access is forbidden."
+  },
+  "not_found": {
+    "title": "NOT FOUND",
+    "message": "Not found."
+  },
+  "unprocessable_entity": {
+    "title": "UNPROCESSABLE ENTITY",
+    "message": "Unprocessable Entity."
+  },
+  "internal_server": {
+    "title": "INTERNAL SERVER ERROR",
+    "message": "Internal server error."
+  },
+
+  "min": "{property} must not be less than {min}",
+  "isNotEmpty": "{property} should not be empty",
+  "isBoolean": "{property}  must be a boolean",
+  "isString": "{property} must be a string",
+  "isDate": "{property} must be a Date instance",
+  "nestedValidation": "{property} nested property data must be either object or array",
+  "maxLength": "{property} must be shorter than or equal to {max} characters",
+  "isMongoId": "{property}  must be a mongo id",
+  "isInt": "{property} must be an integer number",
+  "isIn": "{property} must be one of the following values: {isIn}",
+  "isArray:": "{property} must be an array",
+  "arrayMinSize": "{property} must contain at least {arrayMinSize} elements",
+  "arrayMaxSize": "{property} must contain not more than {arrayMaxSize} elements",
+  "arrayUnique": "All {property}'s elements must be unique",
+  "isPast": "{property} must be in the past",
+  "isObjectId": "{property}  must be a object id"
+}
